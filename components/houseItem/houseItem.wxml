@@ -1,0 +1,26 @@
+<!--components/houseItem/houseItem.wxml-->
+<view class='flex-container houseItem' id = "{{id}}" catchtap='click'>
+    <image src="{{imgUrl}}" mode='aspectFill'></image>
+    <view class='font-contaienr' style='line-height:40rpx;'>
+        <view class='title'>{{estateName}} {{houseName
+}}</view>
+        <view class='info' >
+            <text>{{info}}<text wx:if="{{hasArea}}" class='sup'>2</text></text>
+        </view>
+        <view class='home-manager'>
+            <text style='color:#9F9DA3;font-size:24rpx'>{{waiterInfo}}</text>
+            <view style='float:right;color:#FE5F5F;'><text>{{price}}</text> 元/月</view>
+        </view>
+    </view>
+
+     <view class='icon-container' wx:if="{{houseResourceType=== 1||houseResourceType ===2}}" >
+      <view class=" {{houseResourceType===1 ? 'wuye-icon':'gongyu-icon'}}">
+      </view>
+      <view class='font'>
+        {{houseResourceType===1 ? '物业':'公寓'}}
+      </view>
+      <view class='font' style = "top:30rpx;">
+        直租
+      </view>
+    </view>
+</view>

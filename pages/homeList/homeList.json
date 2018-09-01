@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "房源匹配列表",
+  "usingComponents": {
+    "HouseItem": "../../components/houseItem/houseItem"
+  }
+}

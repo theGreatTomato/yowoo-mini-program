@@ -1,0 +1,50 @@
+<view class='top'>
+  您与物业的沟通结果？
+</view>
+
+<view class='top'>
+  <view style='float:left;'>
+    <view style='font-size:30rpx;'>{{estateName}} {{houseName}}</view>
+    <view style='font-size:26rpx;color:#FE5F5F;line-height:50rpx;'>{{price}}元/月</view>
+  </view>
+  <image src="{{imgUrl}}" mode='aspectFill'>
+  </image>
+  <view style='clear:both'></view>
+</view>
+
+<view style='border-bottom:1rpx solid #DCE0E0;margin:60rpx 30rpx 0 30rpx' catchtap='select'>
+  <view style='font-size:28rpx;'>您与管家是否确定看房？</view>
+  <view class="{{result?'true':'false'}}">{{result?result:'请选择是或否'}}</view>
+</view>
+
+<view wx:if="{{!selectFalse}}" style='border-bottom:1rpx solid #DCE0E0;margin:60rpx 30rpx 0 30rpx' catchtap='selectTime'>
+  <view style='font-size:28rpx;'>期望的看房时间？</view>
+  <view class="{{time?'true':'false'}}">{{time?time:'请选择时间'}}</view>
+</view>
+
+<view wx:if="{{!selectFalse}}" style='border-bottom:1rpx solid #DCE0E0;margin:60rpx 30rpx 0 30rpx' >
+  <view style='font-size:28rpx;'>您的联系方式？</view>
+  <input value="{{phone}}" class='input' bindinput='phoneinput'  >{{phone}}</input>
+</view>
+
+<view style='border-bottom:1rpx solid #DCE0E0;margin:60rpx 30rpx 0 30rpx' >
+  <view style='font-size:28rpx;'>您还要说点什么？</view>
+  <input placeholder='请输入您想说的话？' bindinput='textinput' placeholder-style="color:#D2CDCD;" class='input' ></input>
+</view>
+
+<view style='height:100rpx;'></view>
+<form bindsubmit="formSubmit" report-submit="true">
+  <view style='padding:0 30rpx;'>
+    <button formType="submit" class='button' catchtap='click'>提交</button>
+  </view>
+</form>
+
+<view hidden="{{!onSelectTime}}">
+  <Weekend   bind:click = 'timeclick' bind:cancel='timecancel' bind:change = 'timechange'></Weekend>
+</view>
+
+<view hidden="{{!onSelectHome}}">
+  <PickerView rangeArray="{{range}}" bind:click = 'homeclick' bind:cancel='homecancel' bind:change = 'homechange'></PickerView>
+</view>
+
+<Toast text='提交成功' mode='ok' wx:if="{{!toastHidden}}" ></Toast>

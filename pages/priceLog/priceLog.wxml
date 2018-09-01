@@ -1,0 +1,41 @@
+  <scroll-view 
+            scroll-y="true"  
+            style="height:{{scrollviewHeight}};box-sizing:border-box;"
+            bindscrolltolower='tolower'
+            bindscroll='scroll'>
+    <view  
+    bindtouchmove = 'touchmove'
+    bindtouchend = 'touchend'
+    bindtouchstart = 'touchstart'>
+  
+      <block wx:if="{{hasData}}">
+        <view class='container con' wx:for="{{data}}" wx:key="unique">
+            <view class='col-contaienr'>
+              <view>提现</view>
+              <view class='time'>{{item.time}}</view>
+            </view>
+            <view class='col-contaienr right'>
+              <view class='price'> ¥ {{item.amount}}</view>
+              <view class="{{ item.statusText=== '正在提现'?'process':'end'}}">
+                  {{item.statusText}}
+              </view>
+            </view>
+          </view>
+          
+
+      </block>
+      <block  wx:else >
+      <view class="col-container">
+        <view  style='padding-top:150rpx;' class='RMB-icon'></view>
+        <view style='padding:50rpx;color:#E7E1E1' >暂无提现记录</view>
+      </view>
+      </block>
+  </view>
+</scroll-view>
+   <movable-area style="margin-top:-150rpx;" >
+    <movable-view out-of-bounds="true" inertia="true" y="{{y}}" damping="{{damping}}" direction="vertical">
+    <view style='height:80rpx;width:80rpx;border-radius:40rpx;background:#ddd;' class='container '>
+        <image style='margin:0 auto;height:29rpx;width:50rpx;' src='../../icon/Loading.gif'></image>
+      </view>
+    </movable-view>
+  </movable-area>

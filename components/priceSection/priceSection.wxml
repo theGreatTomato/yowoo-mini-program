@@ -1,0 +1,91 @@
+<!--components/priceSection/priceSection.wxml-->
+<scroll-view class = 'bg' bindtap='pricecancel'>
+<view style = "position:fixed;bottom:{{bottom}};width:100%;background:#fff" catchtap='noevent'>
+  <view style = 'padding-left:40rpx;'>
+      <picker-view value = "{{priceIndex}}"
+      style="width: 100%; height:{{maxHeight}};"
+      indicator-style='height:50px;' 
+      bindchange = 'pricechange'>
+      <picker-view-column >
+        <view style='display:none'></view>
+        <view wx:for = "{{ priceArray[0]}}" wx:key = 'unique' 
+              id = "{{index}}" class="{{index == priceIndex ?'selected':'item'}}" 
+              catchtap='priceclick' >{{item}}
+              <!--
+          <image wx:if="{{index == priceIndex ?true:false}}"  class='icon' src='../../image/priceSelected.png'>
+          </image>      -->
+        </view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+  <view class='container' style= 'padding:10rpx 40rpx;margin-bottom:15rpx;'>
+    <view class='container' style='width:400rpx'>
+      <view 
+        class='input' 
+        style="color:{{!minprice ? '#9F9DA3':'#263547'}}" 
+        wx:if="{{!onClickMinInput}}" 
+        catchtap='handleClickMinInput'>
+          {{!minprice ? '最低价格':minprice}}
+      </view>
+      <input 
+        wx:if="{{onClickMinInput}}"
+        class='input' 
+        focus="{{!isiPhone || firstClick}}"
+        type='number' 
+        placeholder='最低价格' 
+        bindfocus='focus'
+        bindblur='blur'
+        cursor-spacing='10'
+        placeholder-style="color:#9F9DA3"
+        bindinput='minprice'></input>
+        <view>-</view>
+        <view 
+          class='input' 
+          style="color:{{!maxprice ? '#9F9DA3':'#263547'}}" 
+          wx:if="{{!onClickMaxInput}}" 
+          catchtap='handleClickMaxInput'>
+            {{!maxprice ? '最高价格':maxprice}}</view>
+      <input 
+        class='input'  
+        type='number'
+        focus="{{!isiPhone || firstClick}}"
+        wx:if="{{onClickMaxInput}}"
+        placeholder='最高价格' 
+        cursor-spacing='10'
+        placeholder-style="color:#9F9DA3"
+        bindinput = 'maxprice' 
+        bindfocus='focus'
+        bindblur='blur'></input> 
+        <!---
+         <input
+              placeholder-style="color:#9F9DA3"
+              value="{{minprice}}"
+              class='input' 
+              type='number' 
+              placeholder='最低价格' 
+              bindinput='minprice'
+              cursor-spacing='10'
+              confirm-type = 'done'
+              confirm-hold = "{{!false}}"
+              adjust-position = "{{!false}}"
+             ></input>
+              <view>-</view>
+
+            <input
+              placeholder-style="color:#9F9DA3"
+              value="{{maxprice}}"
+              class='input' 
+              type='number' 
+              placeholder='最高价格' 
+              cursor-spacing='10'
+              confirm-type = '完成'
+              confirm-hold = "{{true}}"
+              adjust-position = "{{true}}"
+              bindinput = 'maxprice'>
+            </input>-->
+    </view>
+    <view class='sure' catchtap='sure'>确定</view>    
+  </view>
+</view>
+</scroll-view>
+

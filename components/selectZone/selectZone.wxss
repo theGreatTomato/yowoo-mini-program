@@ -1,0 +1,24 @@
+/* components/zone/zone.wxss */
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+    width: 750rpx;
+}
+.col {
+    height: 100%;
+    width: 33.333%;
+    position: relative;
+    z-index: 9999;
+    background: #fff;
+}
+.col .item {
+    color:#9F9DA3;
+    font-size: 28rpx;
+    line-height: 70rpx;
+    padding-left :30rpx;
+}
+
+.col .select {
+  color: #FE5F5F;
+  background: #fff;
+}

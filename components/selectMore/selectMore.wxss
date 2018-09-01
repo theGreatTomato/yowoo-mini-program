@@ -1,0 +1,49 @@
+/* components/selectMore/selectMore.wxss */
+.more-container {
+  background: #fff;
+  padding:0 30rpx;
+  border-bottom: 1rpx solid #DCE0E0;
+  position: relative;
+  z-index: 9999;
+}
+.more-container .row {
+  width: 100%;
+  display: flex;
+  margin: 40rpx 0;
+  justify-content: space-between;
+  align-items: center;
+}
+.more-container .title {
+  padding: 30rpx 0 10rpx 0;
+  font-size: 28rpx;
+  color: #263547;
+  font-weight: bold;
+}
+
+.popover-sm {
+  background: #F8F8F8;
+  color: #9F9DA3;
+  font-size: 26rpx;
+  line-height: 52rpx;
+  width: 123rpx;
+  text-align: center;
+}
+
+
+.popover-lg {
+  margin: 0;
+  background: #F8F8F8;
+  color: #9F9DA3;
+  font-size: 26rpx;
+  line-height: 58rpx;
+  width: 285rpx;
+  text-align: center;
+  border-radius: 2rpx;
+}
+.popover-lg::after {
+  content: ''
+}
+.select {
+  background: #FE5F5F;
+  color: #fff;
+}

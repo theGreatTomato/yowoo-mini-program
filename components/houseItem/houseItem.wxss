@@ -1,0 +1,101 @@
+/* components/houseItem/houseItem.wxss */
+.flex-container {
+    display: flex;
+} 
+.houseItem {
+    padding: 30rpx;
+    background:#fff;
+    height: 212rpx;
+    box-sizing: border-box;
+    position: relative;
+}
+.houseItem image{
+    width: 202rpx;
+    height: 152rpx;
+}
+.houseItem .title {
+    font-size: 30rpx;
+    line-height: 30rpx;
+    color: #263547;
+    max-width: 458rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.sup{
+     font-size: 8px;
+     vertical-align:text-top;
+}
+.font-contaienr {
+    margin: 0;
+    padding: 0;
+    margin-left: 30rpx;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 150rpx;
+    width:458rpx;
+}
+
+.info {
+    color: #D2CDCD;
+    margin-top:20rpx;     
+    font-size: 24rpx;
+    line-height: 24rpx;
+    max-width: 438rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 40rpx;
+}
+.info text {
+  color: #D2CDCD;
+}
+.home-manager {
+    width: 100%;
+    overflow: hidden;
+    font-size: 30rpx;
+    line-height: 30rpx;    
+    color: #9F9DA3;
+}
+.icon-container {
+  position: absolute;
+  top:5rpx;
+  left: 38rpx;
+}
+.icon-container .font {
+  font-size: 18rpx;
+  display: inline-block;
+  width: 75rpx;
+  height: 18rpx;
+  position: absolute;
+  top: 7rpx;
+  left: 20rpx;
+  color:#fff;
+}
+
+/*icon*/
+
+
+.addr-icon::after {
+    font-family: 'iconfont';
+    content:'\e640';
+    font-size: 24rpx;
+    padding-right: 11rpx;
+    line-height: 24rpx;
+}
+
+.wuye-icon::after {
+  font-family: 'iconfont';
+    content:'\e624';
+    color:#FE5F5F;
+    font-size: 72rpx;    
+}
+
+.gongyu-icon::after {
+  font-family: 'iconfont';
+    content:'\e624';
+    color:#37BC9B;
+    font-size: 72rpx;
+}

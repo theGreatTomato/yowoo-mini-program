@@ -1,0 +1,92 @@
+<!--components/price/price.wxml-->
+<view style="height:100%;background: rgba(0, 0, 0, 0.5);transform:translateY({{y}})" catchtap='cancel'>
+  <view class='price' catchtap='none'>
+    <view 
+      class="row {{selectIndex===index?'select':''}}" 
+      wx:for="{{priceArray}}" 
+      wx:key="{{index}}"
+      id="{{index}}"
+      catchtap='click'>
+      {{item}}
+    </view>
+    <view class='row' style='height:100rpx;'  report-submit="true"></view>
+      <form bindsubmit="formSubmit" report-submit="true"> 
+      
+        <view class='container' style="width:100%;padding:15rpx 0;">
+          <view class='container' style='width:430rpx' >
+          <view 
+            class='input' 
+            style="color:{{!minprice ? '#9F9DA3':'#263547'}}" 
+            wx:if="{{!onClickMinInput}}" 
+            catchtap='handleClickMinInput'>
+              {{!minprice ? '最低价格':minprice}}
+          </view>
+            <input
+              wx:if="{{onClickMinInput}}"
+              placeholder-style="color:#9F9DA3"
+              value="{{minprice}}"
+              class='input' 
+              type='number' 
+              placeholder='最低价格' 
+              bindfocus='focus'
+              cursor-spacing='10'
+              bindblur='blur'              
+              focus="{{!isiPhone || firstClick}}"
+              bindinput='minprice'
+             ></input>
+              <view>-</view>
+
+            <view 
+              class='input' 
+              style="color:{{!maxprice ? '#9F9DA3':'#263547'}}" 
+              wx:if="{{!onClickMaxInput}}" 
+              catchtap='handleClickMaxInput'>
+                {{!maxprice ? '最高价格':maxprice}}
+            </view>
+
+            <input
+              wx:if="{{onClickMaxInput}}"
+              placeholder-style="color:#9F9DA3"
+              value="{{maxprice}}"
+              class='input'
+              cursor-spacing='10' 
+              type='number' 
+              focus="{{!isiPhone || firstClick}}"
+              placeholder='最高价格' 
+              bindfocus='focus'
+              bindblur='blur' 
+              bindinput = 'maxprice'></input>
+          </view>
+          <button class='sure' formType="submit">确定</button>    
+        </view> 
+      <!--
+        <view class='container' style="width:100%;padding:15rpx 0;">
+          <view class='container' style='width:430rpx' >
+          
+            <input
+              placeholder-style="color:#9F9DA3"
+              value="{{minprice}}"
+              class='input' 
+              type='number' 
+              placeholder='最低价格' 
+              bindinput='minprice'
+              cursor-spacing='10'
+             ></input>
+              <view>-</view>
+
+            <input
+              placeholder-style="color:#9F9DA3"
+              value="{{maxprice}}"
+              class='input' 
+              type='number' 
+              placeholder='最高价格' 
+              cursor-spacing='10'
+              bindinput = 'maxprice'>
+            </input>
+
+          </view>
+          <button class='sure' formType="submit">确定</button>    
+        </view>-->
+      </form>
+  </view>  
+</view>

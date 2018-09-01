@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/shouyi/shouyi",
+    "pages/aboutMe/aboutMe",
+    "pages/helpMe/helpMe",
+    "pages/searchHome/searchHome",
+    "pages/selectCity/selectCity",
+    "pages/searchPage/searchPage",
+    "pages/detail/detail",
+    "pages/homeList/homeList",
+    "pages/zuyue/zuyue",
+    "pages/schedule/schedule",
+    "pages/yuyue/yuyue",
+    "pages/feedback/feedback",
+    "pages/heshikanfang/heshikanfang",
+    "pages/goutongjieguo/goutongjieguo",
+    "pages/zuyueList/zuyueList",
+    "pages/tixian/tixian",
+    "pages/priceLog/priceLog",
+    "pages/myHouseResource/myHouseResource"
+  ],
+  "window": {
+    "navigationBarTitleText": "登录Demo",
+    "navigationBarTextStyle": "#fff",
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#FFFFFF"
+  },
+  "debug": true
+}

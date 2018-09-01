@@ -1,0 +1,100 @@
+/* pages/zuyue/zuyue.wxss */
+.top {
+  padding: 30rpx;
+  font-size: 50rpx;
+  font-weight: bold;
+}
+
+.title {
+  padding: 0 30rpx;
+  height: 138rpx;
+  border-bottom: 4rpx solid #F6F6F6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.title .name {
+  color: #263547;
+  font-size: 38rpx;
+  line-height: 48rpx;
+}
+.date {
+  font-size: 30rpx;
+  line-height: 58rpx;
+  color: #9F9DA3;
+}
+page {
+  height: 100%;
+}
+.flex-container {
+  display: flex;
+  padding: 0 30rpx;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2rpx solid #F6F6F6;
+  height: 80rpx;
+}
+.key {
+  width: 150rpx;
+  color: #9F9DA3;
+  font-size: 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.key text {
+  color:  #9F9DA3;
+}
+.word {
+  padding-left: 30rpx;
+  width: 510rpx;
+  font-size: 30rpx;
+}
+
+.zhifu {
+  font-size:26rpx;
+  width: 100rpx;
+  border:1rpx solid #FE5f5f;
+  color: #FE5f5f;
+  background: #fff;
+  line-height: 46rpx;
+  height: 46rpx;
+  text-align: center;
+}
+.yizhifu {
+  font-size:26rpx;
+  width: 100rpx;
+  border:1rpx solid #37BC9B;
+  color: #37BC9B;
+  background: #fff;
+  line-height: 46rpx;
+  height: 46rpx;
+  text-align: center;
+}
+
+
+.price {
+  color: #FE5f5f;
+  font-size: 40rpx;
+  line-height: 80rpx;
+}
+
+
+/*icon*/
+.left::after{
+  font-family: 'iconfont';
+  content: '\e659';
+  font-size: 32rpx;
+}
+
+.fangzi::after {
+  font-family: 'iconfont';
+  content: '\e652';
+  font-size: 180rpx;
+  color: #9F9DA3;
+}
+.yoowu::after {
+  font-family: 'iconfont';
+  content: '\e63c';
+  font-size: 28rpx;
+  color: #FE5f5f;
+}

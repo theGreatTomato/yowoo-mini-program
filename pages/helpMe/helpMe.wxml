@@ -1,0 +1,149 @@
+
+<view class='header' style='position:fixed;top:0;'> 
+  <view class='h1'>有屋帮您找房</view>
+  <view class='desc'>完善租房需求，有屋找到合适房源将第一时间推送给您</view>
+  <view class='picker container' bindtap='selectCity'>
+    <text>{{cityRange[0][cityIndex]}}</text>
+    <text class='icon-down'></text>
+  </view>
+</view>
+<view style='height:12rpx;background:#f6f6f6;padding-top:166rpx;'></view>
+
+<view hidden="{{!onSelectCity}}">
+  <pickerView id = 'pickerView' rangeArray="{{cityRange}}" bind:click = 'click' bind:cancel='cancel' bind:change = 'change'></pickerView>
+</view>
+
+<form bindsubmit="formSubmit" report-submit="true">
+   <view class='inputContainer'>
+      <text class = "text">电话</text>
+      <input value="{{phone}}" name = 'phone' dir="rtl" type='number'
+        class='input' name='phone' placeholder = '请输入您的手机号码'>
+        </input>
+    </view>
+    <view class='inputContainer addr' style = "height:{{height}}">
+      <text class = "text">地址</text>
+        <textarea  
+              class='zone'
+              wx:if = "{{show && textAreaOnFoces}}"
+              name='zone' 
+              auto-focus = "{{textAreaOnFoces}}"
+              focus = "{{textAreaOnFoces}}"
+              style = "max-height:{{maxHeight}};height={{maxHeight}}"
+              maxlength='50'
+              show-confirm-bar="{{false}}"
+              value="{{zoneValue}}"
+              bindinput='zoneInput'
+              bindlinechange='lineChange'
+              cursor-spacing ="15"
+              bindfocus='firstTextareaFouces'
+              bindblur='firstTextareaBlur'>
+        </textarea>
+
+        <view wx:if = "{{!show || !textAreaOnFoces}}"  catchtap='firstTextareaFouces'
+        style = "max-height:{{maxHeight}};color:{{zoneValue?'#234567':'#9F9DA3'}}" class='zone'>
+        {{zoneValue?zoneValue:'请输入期待入住的小区或商圈'}}</view>
+    </view> 
+    <view class='inputContainer'>
+      <text class = "text">价格</text>
+      <view catchtap='selectPrice' style='width:450rpx'>
+        <text style = "color:{{price?'#000':'#9F9DA3'}}">{{price?price:'请选择您能接受的价格范围'}}</text>
+        <text class='icon-down'></text>
+      </view>
+    </view>
+    <view class='inputContainer'>
+      <text class = "text">户型</text>
+      <view catchtap='selectHuxing' style='width:450rpx'>
+        <text style = "color:{{Huxing?'#000':'#9F9DA3'}}">{{Huxing?Huxing:'请选择您期待的户型'}}</text>
+        <text class='icon-down'></text>
+      </view>
+    </view>
+    <view class='inputContainer'>
+      <text class = "text">时间</text>
+      <view catchtap='selectTime' style='width:480rpx'>
+        <text style = "color:{{time?'#000':'#9F9DA3'}}">{{time?time:'请选择可以接受的最迟入住时间'}}</text>
+        <text class='icon-down'></text>
+      </view>
+    </view>
+    <view class='inputContainer'>
+      <text class = "text">合租</text>
+      <view catchtap='selectRent' style='width:450rpx'>
+        <text style = "color:{{rent?'#000':'#9F9DA3'}}">{{rent?rent:'请选择是否接受合租'}}</text>
+        <text class='icon-down'></text>
+      </view>
+    </view>
+
+    <block wx:if="{{rent === '是'}}">
+        <view class='inputContainer'>
+      <text class = "text">性别</text>
+      <view catchtap='selectSex' style='width:450rpx'>
+        <text style = "color:{{sex?'#000':'#9F9DA3'}}">{{sex?sex:'请选择您的性别'}}</text>
+        <text class='icon-down'></text>
+      </view>
+    </view>
+    <view class='inputContainer'>
+      <text class = "text">室友</text>
+      <view catchtap='selectRootmate' style='width:450rpx'>
+        <text style = "color:{{rootmate?'#000':'#9F9DA3'}}">{{rootmate?rootmate:'请选择可接受室友的性别'}}</text>
+        <text class='icon-down'></text>
+      </view>
+    </view>
+    </block>
+
+    <view class='inputContainer' style = 'border-bottom:0'>
+      <text class = "text">其他要求</text>
+    </view>
+    <view class='textarea-container'style = "position:relative;">
+      <view class='textarea'>
+        <textarea name='other' 
+          bindfocus="areatextfocus"
+          bindblur="areatextblur"
+          bindinput='textareaInput' 
+          name='description'
+          wx:if="{{show}}"
+          value="{{description}}"
+          class='other'
+          style='height:160rpx;' 
+          show-confirm-bar="{{false}}"
+          maxlength='200'
+          cursor-spacing = '95'
+          placeholder='请输入您的其他要求...'>
+        </textarea>
+        <view style = 'position:absolute;right:50rpx;top:195rpx;color:#9F9DA3'>{{textareaLength}}/200</view>
+      </view>
+    </view>
+  <button formType="submit" class="submit-button " >提交</button>
+</form>
+
+
+<view wx:if = "{{onSelectPrice}}" >
+  <priceSection id = 'priceSection'  bind:priceclick = 'priceclick' price="{{price}}"
+     bind:pricecancel = 'pricecancel' maxHeight='600rpx'>
+  </priceSection>
+</view>
+
+<view hidden="{{!onSelectHuxing}}">
+  <pickerView id = 'HuxingpickerView' rangeArray="{{HuxingRange}}" bind:click = 'Huxingclick' bind:cancel='Huxingcancel' bind:change = 'Huxingchange'></pickerView>
+</view>
+
+<view hidden="{{!onSelectTime}}">
+  <TimePicker   bind:click = 'timeclick' bind:cancel='timecancel' bind:change = 'timechange'></TimePicker>
+</view>
+<view hidden="{{!onSelectRent}}">
+  <pickerView id = 'rentPickerView' rangeArray="{{rentRange}}" bind:click = 'rentclick' bind:cancel='rentcancel' bind:change = 'rentchange'></pickerView>
+</view>
+<view hidden="{{!onSelectSex}}">
+  <pickerView id = 'sexPickerView' rangeArray="{{sexRange}}" bind:click = 'sexclick' bind:cancel='sexcancel' bind:change = 'sexchange'></pickerView>
+</view>
+<view hidden="{{!onSelectRootmate}}">
+  <pickerView id = 'rootmatePickerView' rangeArray="{{rootmateRange}}" bind:click = 'rootmateclick' bind:cancel='rootmatecancel' bind:change = 'rootmatechange'></pickerView>
+</view>
+
+
+<view hidden="{{!error}}" class='error'>
+  {{error}}
+</view>
+
+<!--占位置的-->
+<view hidden="{{isHidden}}" style='height:500px'></view>
+
+<Toast text='提交成功' mode='ok' wx:if="{{!toastHidden}}" ></Toast>

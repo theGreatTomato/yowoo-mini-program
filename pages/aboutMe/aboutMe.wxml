@@ -1,0 +1,109 @@
+<view class='img-container' style='margin-top:50rpx;'>
+  <view style='padding-bottom:24rpx;'>
+    <text class='yowoo'></text>
+  </view>
+  <view style='padding-bottom:36rpx;'>
+    <text class='wuyezhizu'></text>
+  </view>
+  <view class='desc'>租房找物业 省钱又省心</view>
+  <image src='../../img/4.png'></image>
+</view>
+
+<view class='container' style='border-left:8rpx solid #FF5E5B;'>
+  <view class='col'><text class='firstWord'>A</text>BOUT US</view>
+  <view class='col'>关于我们</view>
+</view>
+
+<view class='text-container'>
+  有屋是一个基于物业的租房服务平台，区别于传统线上租房平台，您可以通过有屋的管家直接联系房东；不仅租房效率高、服务好，我们还为您节省佣金。专业、温暖、正直，是有屋的不懈追求。
+</view>
+
+<view class='container' style='height:280rpx;margin-bottom:50rpx;'>
+  <view style='height:238rpx;width:238rpx'>
+    <image style='height:238rpx;width:238rpx' mode='aspectFit' src='../../img/6.png'></image>
+  </view>
+  <view>
+    <view class='firstWord col' style='font-size:35rpx;margin-bottom:25rpx;'>租房省心又省钱</view>
+    <view class='desc col'>个人房源 物业带看 房东直签</view>
+  </view>
+</view>
+<view class='container' style='height:280rpx;margin-bottom:50rpx;'>
+  <view style='height:280rpx;width:238rpx'>
+    <image style='height:280rpx;width:238rpx' mode='aspectFit' src='../../img/5.png'></image>
+  </view>
+  <view>
+    <view class='firstWord col' style='font-size:35rpx;margin-bottom:25rpx;'>便捷的租房体验</view>
+    <view class='desc col'>搜索房源 预约看房 满意签约</view>
+  </view>
+</view>
+
+<view class='container' style='border-left:8rpx solid #FF5E5B;margin-top:100rpx;'>
+  <view class='col'><text class='firstWord'>C</text>ONTACT US</view>
+  <view class='col'>联系我们</view>
+</view>
+
+<view class='container'>
+  <view style='margin:80rpx 0 0 0;padding:0' class='container'>
+    <view class='icon-container'>
+      <image style='height:80rpx;width:80rpx;' src='../../icon/phone.png'></image>
+    </view>
+    <view bindtap='call'>
+      <view class='col font'>客服电话</view>
+      <view class='col font'>400-189-1517</view>
+    </view>
+  </view>
+</view>
+
+<view class='container' >
+  <view style='margin:50rpx 0 0 0;padding:0' class='container'>
+    <view class='icon-container'>
+      <image style='height:80rpx;width:80rpx;' src='../../icon/yuanyouxiang.png'></image>
+    </view>
+    <view >
+      <view class='col font'>反馈邮箱</view>
+      <view class='col font'>help@yowootech.com</view>
+    </view>
+  </view>
+</view>
+
+<view class='container' >
+  <view style='margin:50rpx 0 0 0;padding:0' class='container'>
+    <view class='icon-container'>
+      <image style='height:80rpx;width:80rpx;' src='../../icon/yuanweibo.png'></image>
+    </view>
+    <view >
+      <view class='col font'>官方微博</view>
+      <view class='col font'>@有屋租房</view>
+    </view>
+  </view>
+</view>
+
+<view class='container' >
+  <view style='margin:50rpx 0 0 0;padding:0' class='container'>
+    <view class='icon-container'>
+      <image style='height:80rpx;width:80rpx;' src='../../icon/yuanweixin.png'></image>
+    </view>
+    <view >
+      <view class='col font'>官方微信</view>
+      <view class='col font'>有屋租房（ID:yowoozufang）</view>
+    </view>
+  </view>
+</view>
+
+<view class='container' >
+  <view style='margin:50rpx 0 30rpx 0;padding:0' class='container'>
+    <view class='icon-container'>
+      <image style='height:80rpx;width:80rpx;' src='../../icon/yuandingwei.png'></image>
+    </view>
+    <view >
+      <view class='col font'>办公地址</view>
+      <view class='col font'>广东省深圳市南山区软件产业基地6栋4A</view>
+    </view>
+  </view>
+</view>
+
+<view style='width:100%;height:376rpx;margin:50rpx 0;' >
+  <myMap lon="113.94068074278314" lat="22.523198182458216"></myMap>
+</view>
+
+<view style='height:80rpx;'></view>

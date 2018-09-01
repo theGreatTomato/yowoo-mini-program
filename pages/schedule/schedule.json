@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "看房行程",
+  "usingComponents": {
+    "MyMap": "../../components/myMap/myMap"
+  }
+}

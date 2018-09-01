@@ -1,0 +1,19 @@
+<!--pages/homeList/homePage.wxml-->
+
+<view wx:for="{{homeList}}" wx:if="{{hasHomeData}}" wx:key='unique'>
+  <HouseItem data="{{item}}" bind:click="houseDetail"></HouseItem>
+</view>
+
+<view hidden="{{selectSort}}" class='sort' catchtap='clickSortButton'>
+  <view class='sort-icon'></view>
+  <text class='font'>排序</text >
+</view>
+
+<view hidden="{{!selectSort}}" class='select-page' catchtap='cancel'>
+  <view class=' content'>
+    <view wx:for="{{sortList}}" wx:key="{{index}}" id="{{item.id}}" class="{{selectSortId == item.id ? 'select' :''}}" catchtap='onSort'>
+      {{item.content}}
+    </view>
+  </view>
+</view>
+

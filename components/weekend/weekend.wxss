@@ -1,0 +1,40 @@
+/* components/pickerView/pickerView.wxss */
+.bg{
+  height:100%;
+  position:fixed;
+  top:0;
+  left: 0;
+  background: rgba(2, 2, 2, 0.6);
+  z-index: 9999;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  box-sizing: border-box;
+  font-size: 30rpx;
+}
+page{
+  height: 100%;
+}
+.top{
+  position: relative;
+  z-index: 9999;
+}
+.top .cancel{
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding:40rpx 40rpx 40rpx 40rpx;
+  z-index: 9999;
+}
+.top .submit{
+  position: absolute;
+  right: 0;
+  top:0;
+  padding:40rpx 40rpx 40rpx 40rpx;
+  color:#FE5F5F;
+  z-index: 9999;
+}

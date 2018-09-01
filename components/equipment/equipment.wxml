@@ -1,0 +1,19 @@
+<!--components/equipment/equipment.wxml-->
+<view wx:if="{{firstRowData}}" class='container' style='width:100%'>
+  <view class='item' wx:for = "{{firstRowData}}" wx:key= "unique">
+    <text class="{{item.className}}"></text>
+    <view class='font'>{{item.name}}</view>
+  </view>
+</view>
+<view wx:if="{{secondRowData}}" class='container' style='width:100%'>
+  <view class='item' wx:for = "{{secondRowData}}" wx:key= "unique">
+    <text class="{{item.className}}"></text>
+    <view class='font'>{{item.name}}</view>
+  </view>
+</view>
+<view  class='container' style='width:100%'>
+  <view class='item' wx:for = "{{data}}" wx:key= "unique">
+    <text class="{{item.className}}"></text>
+    <view class='font'>{{item.name}}</view>
+  </view>
+</view>

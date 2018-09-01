@@ -1,0 +1,103 @@
+<!--pages/detail/detail.wxml-->
+<view wx:if="{{!firstEnter}}">
+
+<Swiper wx:if="{{showImages}}" data = "{{images}}"></Swiper>
+<view class='container-content'>
+<!--top -->
+  <view class='top'>
+    <view >
+      <text class='name'>{{estateName}}</text>
+      <view class='addr' wx:if="{{address}}">
+        <text class='addrIcon'></text>
+        <text> {{address}}</text>
+      </view>
+    </view>
+    <view class='huxing'>{{houseName}}</view>
+  </view>
+<!--价格栏-->
+  <view class='part2'>
+    <text class='price'>{{price}}</text>
+    <text style='color:#FE5F5F'> 元/月 </text>
+    <text style='padding-left:30rpx;'>{{depositMonths}}{{payMonths}}</text>
+  </view>
+
+<!--房源信息-->
+  <view class='info'>
+    <view class='p-tiitle'>房源信息</view>
+    <view class='top'>
+      <view>
+        <text style='color:#9F9DA3'>面积：</text>
+        <text wx:if="{{area}}">{{area}}㎡</text>
+      </view>
+      <view>
+        <text style='color:#9F9DA3'>是否有电梯：</text>
+        <text>{{hasElevator?'有':'无'}}</text>
+      </view>
+    </view>
+      <view class='top' style='padding-top:10rpx;'>
+      <view>
+        <text style='color:#9F9DA3'>朝向：</text>
+        <text>{{orientation}}</text>
+      </view>
+      <view>
+        <text style='color:#9F9DA3'>出租方式：</text>
+        <text>{{renterType === 1?'整租':'合租'}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!--房源配置-->
+  <view class='equip' style='margin-top:30rpx;' wx:if = "{{!hiddenFurniture}}">
+    <view class='p-tiitle'>房源配置</view>
+    <Equipment wx:if="{{furniture}}"  data = "{{furniture}}"></Equipment>
+  </view>
+  
+  <!--房源位置-->
+  <view class='equip' wx:if = "{{lon && lat}}" >
+    <view class='p-tiitle'>房源位置</view>
+    <view style='font-size:30rpx;color:#263547'> 
+        <text class='addrIcon'></text>
+        <text >  {{address}}</text>      
+    </view>
+    <view  style='width:100%;height:376rpx;margin-top:50rpx ;' >
+      <MyMap wx:if = "{{lon && lat}}" lon="{{lon}}" lat="{{lat}}">
+      </MyMap>
+    </view>
+  </view>
+ </view>  
+
+  <view style='width:100%;height:140rpx; background:#fff'>
+    <form bindsubmit="formSubmit" report-submit="true">
+      <view wx:if="{{houseResourceType === 3}}">
+        <button class='btn ' style='border-radius:0;height:140rpx;line-height:140rpx' formType="submit" catchtap='call' >联系对方</button>
+      </view>
+      <view wx:if="{{houseResourceType !== 3 && appointmentTime !== ''}}" class='container'>
+        <button class='btn btn-container' style='background:#fff'  catchtap='connect' >
+          <view style='height:45rpx;' class='connect'></view>
+          <view style='font-size:24rpx;line-height:24rpx;color:#D2CDCD;'> 联系管家</view>
+        </button>
+        <button class='btn btn-container' style='background:#37BC9B;border-radius:0' catchtap='linkToSchedule'>
+          <view style='font-size:30rpx;line-height:40rpx;color:#fff'>您已预约</view>
+          <view style='font-size:20rpx;line-height:30rpx;color:#fff'>{{appointmentTime}}              </view>
+        </button>
+      </view>
+      <view class='container' wx:if="{{houseResourceType !== 3 && appointmentTime === ''}}">
+        <button class='btn btn-container' style='background:#fff' catchtap='connect' >
+          <view style='height:45rpx;' class='connect'></view>
+          <view style='font-size:24rpx;line-height:24rpx;color:#D2CDCD;' > 联系管家</view>
+        </button>
+        <button class='btn btn-container' style='border-radius:0' catchtap='yuyue' >
+          <view style='color:#fff;font-size:30rpx;'> 预约看房</view>
+        </button>
+      </view>
+    </form> 
+     
+  </view> 
+
+</view>
+
+
+
+<view wx:if="{{firstEnter}}" class='col-container' style='height:100%;width:100%;justify-content: center;'>
+    <image src='../../icon/Loading.gif' style='height:50rpx;width:90rpx'></image>
+</view>

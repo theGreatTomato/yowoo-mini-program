@@ -1,0 +1,26 @@
+
+<form  bindsubmit="formSubmit" report-submit="true">
+    <view class='flex-contaienr' style='padding:0 30rpx;border-bottom:1rpx solid #E7E1E1;height:110rpx;'>
+      <input
+        focus="true"
+        class='input' 
+        value="{{searchVal}}"
+        placeholder='输入小区名或商圈' 
+        bindinput='change'>
+      </input> 
+      <button class='btn clear' catchtap='clear'>清空</button>
+    </view>
+    <view wx:if="{{searchVal}}" class='intro'> 搜索建议</view>
+    <block wx:if="{{searchVal}}" >
+      <button 
+        form-type='submit' 
+        wx:for="{{resultArr}}" 
+        wx:key = "{{index}}" 
+        id="{{index}}"
+        catchtap="click"
+        class='item btn'>
+        {{item.name}} 
+        <text class='type' wx:if="{{item.typeName !=='小区'}}">[{{item.typeName}}]</text>
+      </button>
+    </block>
+</form>

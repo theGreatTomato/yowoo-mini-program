@@ -1,0 +1,26 @@
+.top {
+  padding: 30rpx;
+  font-size: 50rpx;
+  font-weight: bold;
+}
+
+image {
+  height: 119rpx;
+  width: 159rpx;
+  float: right;
+}
+
+.true {
+  color: #263547;
+  font-size: 30rpx;
+  line-height: 86rpx;  
+}
+.false {
+  color: #D2CDCD;
+  font-size: 30rpx;
+  line-height: 86rpx;
+}
+.input {
+  font-size: 30rpx;
+  height: 86rpx;
+}

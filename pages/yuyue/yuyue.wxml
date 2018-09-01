@@ -1,0 +1,46 @@
+<view class='top'>
+  预约看房时间
+</view>
+<view style='background:#F6F6F6;height:12rpx;'></view>
+
+  <view style='padding:30rpx 30rpx;font-size:38rpx'>{{estateName}} {{houseName}}</view>
+  <view class='flex-container'>
+    <view class='key'>
+      <text  style='color: #9F9DA3;'>租</text>
+      <text  style='color: #9F9DA3;'>金：</text>
+    </view>
+    <view class='word'>{{price}}元/月</view>
+  </view>
+
+  <view class='flex-container'>
+    <view class='key'>
+      <text  style='color: #9F9DA3;'>预</text>
+      <text  style='color: #9F9DA3;'>约</text>
+      <text  style='color: #9F9DA3;'>时</text>
+      <text  style='color: #9F9DA3;'>间：</text>
+    </view>
+    <view class='word' style='color:#FE5f5f'>{{renterMakeTime}}</view>
+  </view>
+
+  <view class='flex-container'>
+    <view class='key'>
+      <text  style='color: #9F9DA3;'>房</text>
+      <text  style='color: #9F9DA3;'>源</text>
+      <text  style='color: #9F9DA3;'>地</text>
+      <text  style='color: #9F9DA3;'>址：</text>
+    </view>
+    <view class='word' style='color:#FE5f5f'>深圳市宝安区新安三路154号</view>
+  </view>
+
+  <view wx:if="{{item.imgUrl}}" style='padding:40rpx 30rpx;height:520rpx;'>
+    <image src='imgUrl' mode='aspectFit'></image>
+  </view>
+  <view style='font-size:26rpx;color:#9F9DA3;text-align:center;padding-top:15rpx'>请提前做好准备</view>
+
+  <form bindsubmit="formSubmit" report-submit="true">
+    <view style='width:268rpx; height:80rpx; margin:60rpx auto;'>
+      <button id="{{index}}" class='button' style='font-size:28rpx;' form-type='submit' catchtap='click'>
+        <text class='connect'></text>
+        联系物业</button>
+    </view>
+  </form>

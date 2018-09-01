@@ -1,0 +1,43 @@
+<view class='flex-container'>
+  <view class='username'>姓名</view>
+  <input placeholder='请输入姓名' value="{{name}}" dir="rtl" placeholder-style='font-size:28rpx;' bindinput='nameInput'></input>
+</view>
+
+<view class='flex-container'>
+  <view class='username'>银行卡号   </view>
+  <input placeholder='请输入银行卡号' value="{{card}}" dir="rtl" placeholder-style='font-size:28rpx;' type='number' bindinput='cardInput' bindblur='cardblur'></input>
+</view>
+
+<view class='flex-container'>
+  <view class='username'>开户行 </view>
+  <input placeholder='请输入开户行' value="{{bank}}" dir="rtl" placeholder-style='font-size:28rpx;' bindinput='bankInput'></input>
+</view>
+
+<view class='earing'>可提现余额<text style='color:#fe5f5f'>￥{{cashAmount}}</text></view>
+
+<view class='container' style='justify-content: center;height:150rpx'>
+  <text class='RMB'>￥ </text>
+  <!--<textarea  bindinput='priceInput'  wx:if="{{onFocuPrice}}" class='price-input' bindblur='blur' focus="{{onFocuPrice}}" value="{{price}}" ></textarea>
+  <view class='price-input' catchtap='clickTextarea' wx:if="{{!onFocuPrice}}">{{price}}</view> -->
+  <textarea  bindinput='priceInput'   class='price-input'  value="{{price}}" ></textarea>
+</view>
+
+  <form bindsubmit="formSubmit" report-submit="true">
+    <view style='padding: 50rpx 30rpx;'>
+      <button  class='button' style='line-height:94rpx' form-type='submit' catchtap='click' >
+        确认提现</button>
+    </view>
+  </form>
+
+  <view style='color:#9F9DA3;font-size:26rpx;text-align:center;'>最多可提现全部佣金，到账时间为3-5个工</view>
+
+    <form bindsubmit="formSubmit" report-submit="true">
+    <view style='padding: 0 30rpx;'>
+      <button  class='log' form-type='submit' catchtap='log' >
+        提现记录</button>
+    </view>
+  </form>
+
+<Toast text='提现成功' mode='success' bind:cancel="cancel" wx:if="{{toastHidden === 'success'}}"   ></Toast>
+<Toast text='提现失败' mode='fail' bind:cancel="cancel" wx:if="{{toastHidden === 'fail'}}"></Toast>
+<Toast text='提现中...' mode='loading'  wx:if="{{toastHidden === 'loading'}}"></Toast>

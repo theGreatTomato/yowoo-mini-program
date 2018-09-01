@@ -1,0 +1,54 @@
+.top {
+  padding: 30rpx;
+  font-size: 50rpx;
+  font-weight: bold;
+}
+page {
+  height: 100%;
+}
+.time {
+  font-size: 38rpx;
+  height: 118rpx;
+  padding: 0 30rpx;
+  color: #263547;
+  line-height: 118rpx;
+}
+
+.map-container {
+  height: 326rpx;
+  padding: 0rpx 30rpx;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.data {
+  color: #9F9DA3;
+  font-size: 28rpx;
+  padding: 30rpx;
+}
+.data text {
+  color: #9F9DA3;
+  padding-right: 15rpx;
+}
+button {
+  padding:0;
+  font-size: 28rpx;
+  margin: 0;
+  display: block;
+}
+
+/**/
+.fangzi-icon::after{
+  font-family: 'iconfont';
+  content:'\e625';
+  font-size: 180rpx;
+  opacity: 0.4;
+  padding: 200rpx 30rpx;
+}
+
+.left::after{
+  font-family: 'iconfont';
+  content:'\e629';
+  font-size: 24rpx;
+}

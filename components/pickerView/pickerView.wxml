@@ -1,0 +1,23 @@
+<!--components/pickerView/pickerView.wxml-->
+<scroll-view class = 'bg'>
+<view style='position:absolute;bottom:0rpx;width:100%;background:#fff;opacity:1;z-index: 9999;'>
+  <view class='container top'>
+        <view class='cancel' catchtap='cancel'>取消</view>
+        <view class='submit' catchtap='click'>确定  </view>
+  </view>
+  <picker-view value = "{{cityArray}}"
+    style="width: 100%; height: 500rpx;position: relative;z-index: 9999;margin-top:100rpx;"
+    indicator-style = 'height:50px;width:100%' 
+    bindchange = 'pickerChange'>
+    <picker-view-column wx:for = "{{rangeArray}}" wx:key = 'unique' wx:for-index="i">
+      <view 
+        style='text-align:center;line-height:50px;' 
+        wx:for = "{{rangeArray[i]}}" 
+        wx:key = 'unique'  
+        wx:for-index="j">
+          {{rangeArray[i][j]}}
+      </view>
+    </picker-view-column>
+  </picker-view>
+</view>
+</scroll-view>

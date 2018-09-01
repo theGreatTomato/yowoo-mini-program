@@ -1,0 +1,17 @@
+.top {
+  padding: 30rpx;
+  font-size: 50rpx;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.true {
+  color: #263547;
+  font-size: 38rpx;
+  line-height: 86rpx;  
+}
+.false {
+  color: #D2CDCD;
+  font-size: 30rpx;
+  line-height: 86rpx;
+}

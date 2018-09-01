@@ -1,0 +1,76 @@
+<view class='top'  wx:if="{{hasData && !firstEnter}}">
+  我的租约
+</view>
+<view  wx:if="{{hasData && !firstEnter}}" style='background:#F6F6F6;height:12rpx;'></view>
+<view wx:if="{{!hasData && !firstEnter}}" class='col-container'>
+    <view class='fangzi' style='padding-top:300rpx;'></view>
+    <view class='yoowu'></view>
+    <view style='font-size:30rpx; font-weight:bold;padding-top:40rpx;' >暂无租约</view>
+    <view style='font-size:26rpx;color:#9F9DA3;padding-top:12rpx;'>去看看房源吧</view>
+    <form bindsubmit="formSubmit" report-submit="true">
+      <view style='padding:100rpx 30rpx;width:690rpx;'>
+        <button form-type='submit' catchtap='linkTo' class='button'>搜索房源</button>
+      </view>
+    </form>
+</view>
+
+<view wx:if="{{firstEnter}}" class='col-container' style='height:100%;width:100%;justify-content: center;'>
+    <image src='../../icon/Loading.gif' style='height:50rpx;width:90rpx'></image>
+</view>
+
+
+<block wx:if="{{hasData && !firstEnter}}" wx:for="{{data}}" wx:key="unique">
+  <view class='container' style='height:auto' catchtap='linkToZuyue' id="{{index}}">
+    <view class='title'>
+      <view class='name'>{{item.productName}}</view>
+      <view class='date'>{{item.startTime}} 签约</view>
+    </view>
+    <view class='left' style='padding-right:30rpx;'></view>
+  </view>
+  <view class='flex-container'>
+    <view class='key'>
+      <text>租</text>
+      <text>金：</text>
+    </view>
+    <view class='word'>{{item.price}}元/月</view>
+  </view>
+  <view class='flex-container'>
+    <view class='key'>
+      <text>押</text>
+      <text>付</text>
+      <text>方</text>
+      <text>式：</text>
+    </view>
+    <view class='word'>{{item.pay}}</view>
+  </view>
+  <view class='flex-container'>
+    <view class='key'>
+      <text>起</text>
+      <text>租</text>
+      <text>时</text>
+      <text>间：</text>
+    </view>
+    <view class='word'>{{item.startTime}}</view>
+  </view>
+  <view class='flex-container'>
+    <view class='key'>
+      <text>租</text>
+      <text>约</text>
+      <text>期</text>
+      <text>限：</text>
+    </view>
+    <view class='word'>{{item.qixian}}</view>
+  </view>
+  <view class='flex-container'>
+    <view class='key'>
+      <text>服</text>
+      <text>务</text>
+      <text>费：</text>
+    </view>
+    <view class='word'  style='width:410rpx'>{{item.ownerAmount}}元</view>
+    <view class='width:100rpx;border-radius:4rpx;'>
+        <view class="{{item.renterPayStatus === '已支付'?'yizhifu':'zhifu'}}"> {{item.renterPayStatus}}</view>
+    </view>
+  </view>
+  <view  style='background:#F6F6F6;height:12rpx;'></view>
+</block>

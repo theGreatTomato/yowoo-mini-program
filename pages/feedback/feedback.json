@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "看房反馈",
+  "usingComponents": {
+    "pickerView": "../../components/pickerView/pickerView",
+    "Toast": "../../components/toast/toast"
+  }
+}

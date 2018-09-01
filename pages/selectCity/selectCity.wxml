@@ -1,0 +1,12 @@
+<!--pages/selectCity/selectCity.wxml-->
+<view class='title'>
+  已开通以下城市
+</view>
+<view class='font'>定位城市</view>
+<view class='selector' catchtap='back'>
+  <text class='addr'></text>
+  <text>{{locationCity}}</text>
+</view> 
+<view class='font'>热门城市</view>
+<view class='selector' catchtap='shenzhen'>深圳</view>
+<view class='selector' catchtap='huizhou'>惠州</view>

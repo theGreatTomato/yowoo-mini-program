@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "预约看房",
+    "usingComponents": {
+      "Toast": "../../components/toast/toast",
+      "TimePicker": "../../components/timePicker/timePicker",
+      "Weekend": "../../components/weekend/weekend"
+    }
+}

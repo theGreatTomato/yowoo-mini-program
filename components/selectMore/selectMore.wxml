@@ -1,0 +1,48 @@
+<!--components/selectMore/selectMore.wxml-->
+<view style='height:100%;background: rgba(0, 0, 0, 0.5); position:relative;z-index:9999' catchtap='cancel'>
+  <view class='more-container'  catchtap='none'>
+    <view class='title'>朝向</view>
+    <view class='row'>
+      <view class="popover-sm {{chaoXiangVal?'':'select'}}" catchtap='noLimitChaoXiang'>不限</view>
+      <view class="popover-sm {{select0?'select':''}}" id='0' catchtap='clickChaoXiang'>朝东</view>
+      <view class="popover-sm {{select1?'select':''}}" id='1' catchtap='clickChaoXiang'>朝西</view>
+      <view class="popover-sm {{select2?'select':''}}" id='2' catchtap='clickChaoXiang'>朝南</view>
+    </view>
+    <view class='row'>
+      <view class="popover-sm {{select3?'select':''}}" id='3' catchtap='clickChaoXiang'>朝北</view>
+      <view class="popover-sm {{select4?'select':''}}" id='4' catchtap='clickChaoXiang'>东南</view>
+      <view class="popover-sm {{select5?'select':''}}" id='5' catchtap='clickChaoXiang'>西南</view>
+      <view class="popover-sm {{select6?'select':''}}" id='6' catchtap='clickChaoXiang'>东北</view>
+    </view>
+    <view class='row'>
+      <view class="popover-sm {{select7?'select':''}}" id='7' catchtap='clickChaoXiang'>西北</view>
+      <view class="popover-sm {{select8?'select':''}}" id='8' catchtap='clickChaoXiang'>南北</view>
+      <view class='popover-sm'></view>
+      <view class='popover-sm'></view>
+    </view>
+
+    <view class='title'>出租方式</view>
+    <view class='row'>
+      <view class="popover-sm {{chuzuVal?'':'select'}}" catchtap='noLimitChuzu'>不限</view>
+      <view class="popover-sm {{chuzuVal==='整租'?'select':''}}" catchtap='zhengzu' >整租</view>
+      <view class="popover-sm {{chuzuVal==='合租'?'select':''}}"  catchtap='hezu' >合租</view>
+      <view class='popover-sm'></view>
+    </view>
+
+    <view class='title'>电梯</view>
+    <view class='row'>
+      <view class="popover-sm {{diantiVal?'':'select'}}"  catchtap='noLimitDianti'>不限</view>
+      <view  class="popover-sm {{diantiVal==='有电梯'?'select':''}}" catchtap='youdianti'>有电梯</view>
+      <view class="popover-sm {{diantiVal==='无电梯'?'select':''}}"  catchtap='wudianti'>无电梯</view>
+      <view class='popover-sm'></view>
+    </view>
+  </view>
+  <form bindsubmit="formSubmit" report-submit="true">
+    <view class='more-container' catchtap='none'>
+      <view class='row' style='margin:0;padding:40rpx 0;'>
+        <view class='popover-lg' catchtap='resetting'>重置</view>
+        <button formType="submit" class='popover-lg select'>确定</button>
+      </view>
+    </view>
+  </form>
+</view>

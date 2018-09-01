@@ -1,0 +1,52 @@
+/**app.wxss  主题色 #FE5F5F**/
+@import './stylesheet.wxss';
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.col-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button {
+  width: 100%;
+  color: white;
+  background-color: #FE5F5F;
+}
+.disabled,.button:active {
+  opacity: 0.8;
+}
+.button::after {
+  border: 0;
+}
+.submit::after {
+  border: none;
+}
+
+.btn {
+  width: 100%;
+  color: white;
+  background-color: #FE5F5F;
+}
+.btn::after {
+  border: 0
+}
+
+.btn-color-border {
+  width: 100%;
+  color: #FE5F5F;
+  border:2rpx solid #FE5F5F;
+  background: #fff;
+}
+.btn-color-border::after {
+  border: 0
+}
+
+text,view {
+  color: #263547;
+}

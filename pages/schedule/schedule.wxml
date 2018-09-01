@@ -1,0 +1,44 @@
+<view class='top' wx:if="{{hasData && !firstEnter}}">
+  看房行程
+  <text style='font-size:26rpx;color:#9F9DA3;font-weight:500'>共有{{len}}个看房行程</text>
+</view>
+<view style='background:#F6F6F6;height:12rpx;'></view>
+
+<view wx:if="{{firstEnter}}" class='col-container' style='height:100%;width:100%;justify-content: center;'>
+    <image src='../../icon/Loading.gif' style='height:50rpx;width:90rpx'></image>
+</view>
+
+<block  wx:if="{{hasData && !firstEnter}}" wx:for="{{data}}" wx:key="{{index}}" id="{{index}}">
+  <view catchtap='linkToZuyue' id="{{index}}">
+    <view class='time'>
+      {{item.confirmedStartTime}}
+    </view>
+      <view class='map-container'>
+        <MyMap  lat="{{item.location.lat}}" lon ="{{item.location.lon}}"></MyMap>
+      </view>
+
+    <view class='data'>
+      <text hidden="{{!item.estateName}}" style='' > {{item.estateName}} </text> 
+       <text hidden="{{!item.houseName}}" >{{item.houseName}} </text> 
+      <text hidden="{{!item.area}}">{{item.area}}㎡</text> 
+      <text style='color:#fe5f5f' hidden="{{!price}}">{{price}}元</text>
+    </view>
+  </view>
+  <form bindsubmit="formSubmit" report-submit="true">
+    <view class='container' style='padding:20rpx 30rpx 40rpx 30rpx;height:88rpx;'>
+      <button formType="submit"  id="{{item.id}}"  wx:if="{{!item.hasFeedback}}" class='button' style='width:384rpx;line-height:88rpx;border-radius: 4rpx;' catchtap='jilu' >记录看房感受</button>
+      <button formType="submit"  id="{{item.id}}"  wx:if="{{item.hasFeedback}}" class='button' style='width:384rpx;line-height:88rpx;background:#37BC9B;border-radius: 4rpx;' catchtap='jilu'>查看我的看房感受</button>
+      <button formType="submit"  class='btn-color-border' style='border-radius: 4rpx;width:254rpx;line-height:84rpx;' id="{{index}}" catchtap='connect'>联系物业</button>
+    </view> 
+  </form>
+  </block>
+
+  <block wx:if="{{!hasData && !firstEnter}}">
+    <view style='padding:100rpx 30rpx;font-size:50rpx;color:#9F9DA3;text-align:center;fangzi-icon:bold;'> 暂无看房行程</view>
+    <view style='text-align:center;padding:200rpx 30rpx 100rpx 30rpx;' class='fangzi-icon'></view>
+    <form bindsubmit="formSubmit" report-submit="true">
+      <view style='padding:30rpx;'>
+        <button class='button' formType="submit" style='line-height:94rpx;' catchtap='linkTo'>点我，带您看好房</button>
+      </view>
+    </form>
+  </block>

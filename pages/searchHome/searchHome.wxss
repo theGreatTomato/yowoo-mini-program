@@ -1,0 +1,145 @@
+ .top{
+  height:200rpx;
+  position: fixed;
+  top: 0;
+  background: #fff;
+  width:100% ;
+  z-index: 999;
+ }
+ page{
+  height: 100%;
+  overflow: hidden;
+}
+.pricetext {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 110rpx;
+}
+.header-container{
+  height: 100rpx;
+  width: 100%;
+  padding: 18rpx 54rpx; 
+  box-sizing: border-box;
+}
+.selectCity{
+  width: 104rpx;
+  font-size: 26rpx;
+  line-height: 65rpx;
+}
+.search{
+  padding-left:20rpx; 
+  width: 510rpx;
+  height: 64rpx;
+  border: 1rpx solid #EFEFEF;
+  font-size: 28rpx;
+  line-height: 64rpx;
+  color: #9F9DA3;
+  border-radius: 10rpx;
+}
+.sl-item{
+  font-size: 26rpx;
+  color: #263547;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-right: 1px solid #EFEFEF;
+  width: 25%;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+}
+.sl-item:last-of-type {
+  border: 0px solid #EFEFEF;  
+}
+
+.fabu {
+  position: absolute;
+  z-index: 11rpx;
+  font-size: 40rpx;
+  bottom:107rpx;
+  left:180rpx;
+  color: #fff; 
+}
+.intro {
+  position: absolute;
+  z-index: 11rpx;
+  font-size: 26rpx;
+  bottom:73rpx;
+  left:180rpx;
+  color: #fff; 
+}
+
+.scrollTopMoreThan200rpx {
+  position: fixed;
+  bottom: 0;
+  z-index: 11;
+  width: 750rpx;
+  height: 88rpx;
+  background: #FE5F5F;
+  opacity: 0.9;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 88rpx;
+  color: #fff
+}
+
+/*icon*/
+.icon-down:after {
+  font-family: 'iconfont';
+  content: '\e656';
+  color:#9F9DA3;
+  font-size: 20rpx;
+  padding-left: 10rpx;
+}
+.addrIcon::after {
+  font-family: 'iconfont';
+  content: '\e613';
+  font-size: 20rpx;
+  padding-bottom: 5rpx;
+  padding-left: 10rpx;  
+}
+.icon-up::after {
+  font-family: 'iconfont';
+  content: '\e657';
+  color:#FE5F5F;
+  font-size: 20rpx;
+  padding-left: 10rpx;
+}
+
+.fangzi-icon::after{
+  font-family: 'iconfont';
+  content:'\e625';
+  font-size: 180rpx;
+  color: #9F9DA3;
+  opacity: 0.4;
+  padding: 200rpx 30rpx;
+}
+
+/*下拉刷新*/
+movable-area{
+  height: 300rpx;
+  width: 750rpx;
+  background: #666;
+}
+.movable-area{
+  height: 300rpx;
+  width: 750rpx;
+  z-index: 98;
+}
+
+movable-view {
+  position: relative;
+  z-index: 9999;
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.refresh-icon::after {
+  font-family: 'iconfont';
+  content:'\e64e';
+  color: #FE5F5F;
+  font-size: 48rpx;
+}

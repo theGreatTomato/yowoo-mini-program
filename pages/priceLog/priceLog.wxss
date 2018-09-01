@@ -1,0 +1,73 @@
+
+
+.RMB-icon::after {
+  font-family: 'iconfont';
+  content: '\e651';
+  font-size: 128rpx;
+  color: #E7E1E1;
+}
+
+page {
+  min-height: 100%;
+  background: #F6F6F6;
+}
+
+
+/*list*/
+.con{
+  width: 690rpx;
+  padding: 0 30rpx;
+  height: 160rpx;
+}
+.con view {
+  font-size: 30rpx;
+  color: #202328
+}
+.con .time {
+   font-size: 24rpx;
+   color: #9FA7AA;
+   line-height:24ropx;
+   padding-top: 20rpx;
+}
+
+.right {
+  text-align: right;
+}
+.right view {
+  width: 300rpx;
+}
+
+.right .process {
+  padding-top: 20rpx;
+  color: #fe5f5f;
+  font-size: 24rpx;
+}
+.right .end {
+  padding-top: 20rpx;
+  color: #9FA7AA;
+  font-size: 24rpx;
+}
+
+
+movable-area{
+  height: 300rpx;
+  width: 750rpx;
+  position: absolute;
+  top: 0;
+}
+movable-view {
+  position: relative;
+  z-index: 9999;
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.refresh-icon::after {
+  font-family: 'iconfont';
+  content:'\e64e';
+  color: #FE5F5F;
+  font-size: 48rpx;
+}

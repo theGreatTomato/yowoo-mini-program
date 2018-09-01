@@ -1,0 +1,27 @@
+<!--components/zone/zone.wxml-->
+<view class='flex-container' style='height:100%'>
+    <view class='col' style='background:#FAFAFA'>
+        <view class="item {{isSelectDistrict?'select':''}}" catchtap='selectDistrict'>区域</view>
+        <view wx:if = "{{metroArray}}" catchtap='selectMetro' class="item  {{isSelectMetro?'select':''}}" catchtap='selectMetro'>地铁</view>
+    </view>
+    <view class='col'>
+        <view class="item {{col2All?'select':''}}" hidden="{{!isSelectDistrict && !isSelectMetro}}" catchtap='col2All'>全部</view>
+        <block wx:if = "{{districtArray && isSelectDistrict}}">
+          <view class="item {{selectDistrictIndex == index ?'select' :''}}" wx:for="{{districtArray}}" wx:key = "{{index}}" id="{{index}}" catchtap='selectDistrictNum'> {{item.districtName}}</view>
+        </block>
+        <!--选择地铁时-->
+        <block wx:if = "{{metroArray && isSelectMetro}}">
+          <view class="item {{selectMetroIndex == index ?'select' :''}}"  wx:for="{{metroArray}}" wx:key = 'unique' id="{{index}}" catchtap='selectMetroNum'> {{item.line}}</view>
+        </block>
+    </view>
+    <!--第三列-->
+    <scroll-view class='col' scroll-y = "true">
+         <view class="item {{col3All?'select':''}}" hidden="{{!selectDistrictIndex }}" catchtap='col3All'>全部</view>
+         <block wx:if = "{{zoneArray && isSelectZone}}">
+            <view class="item {{selectZoneIndex == 'zone'+index ?'select' :''}}" wx:for="{{zoneArray}}" wx:key = "{{index}}" id="zone{{index}}" catchtap='selectzonetNum'> {{item.name}}</view>
+         </block>
+         <block wx:if = "{{metroArray && isSelectStation}}">
+            <view class="item {{selectStationIndex == 'Station'+index ?'select' :''}}" wx:for="{{metroArray[selectMetroIndex].subwayStationInfoList}}" wx:key = "{{index}}" id="Station{{index}}" catchtap='selectStationNum'> {{item.name}}</view>
+         </block>
+    </scroll-view>
+</view>

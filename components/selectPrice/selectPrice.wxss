@@ -1,0 +1,54 @@
+/* components/price/price.wxss */
+.price {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 30rpx;
+    background: #fff;
+}
+.row { 
+    widows: 100%;
+    border-bottom: 1rpx solid #DCE0E0;
+    height: 92rpx;
+    color: #9F9DA3;
+    line-height: 92rpx;
+    font-size: 28rpx;
+}
+.select {
+    color: #FE5F5F;
+}
+
+
+.btn {
+    background: #F8F8F8;
+    font-size: 28rpx;
+    color: #9F9DA3;
+    width: 167rpx;
+    border-radius: 2rpx;
+}
+
+
+.container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.input{
+  padding: 5rpx 0rpx;  
+  text-align: center;
+  font-size: 28rpx;
+  width: 167rpx;  
+  border: 1rpx solid #F8F8F8;
+  background: #F8F8F8;
+}
+.sure{
+  font-size: 28rpx;
+  color:#FE5F5F;
+  border-radius: 2rpx;
+  line-height: 58rpx;
+  padding: 0;
+  width: 167rpx;
+  border: 1rpx solid #FE5F5F;
+  background: #fff;
+  margin: 0;
+}

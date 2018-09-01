@@ -1,0 +1,39 @@
+.top {
+  padding: 30rpx;
+  font-size: 50rpx;
+  font-weight: bold;
+}
+
+.flex-container {
+  display: flex;
+  padding: 0 30rpx;
+  justify-content: space-between;
+  align-items: center;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+}
+
+.key {
+  width: 150rpx;
+  color: #9F9DA3;
+  font-size: 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.word {
+  padding-left: 30rpx;
+  width: 510rpx;
+}
+
+button {
+  padding: 0;
+}
+.connect::after{
+  font-family: 'iconfont';
+  font-size: 30rpx;
+  content: '\e616';
+  color: #fff;
+  margin-right: 10rpx;
+}

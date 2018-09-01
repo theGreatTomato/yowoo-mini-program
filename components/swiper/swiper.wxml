@@ -1,0 +1,13 @@
+<!--components/swiper/swiper.wxml-->
+<swiper  
+  autoplay="true" interval="3000 " duration="200" circular="true"
+  bindchange = 'change'>
+  <block wx:for="{{imgUrls}}" wx:key = 'unique'>
+    <swiper-item>
+      <image mode='aspectFill' class='image' src="{{item}}" />
+    </swiper-item>
+  </block>
+  <view class='dots-container' style="left:{{left}}">
+    <text wx:for="{{imgUrls}}"  wx:key = 'unique' class="{{index===selectIndex ? 'select':''}}"></text>
+  </view>
+</swiper>

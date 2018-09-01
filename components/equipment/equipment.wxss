@@ -1,0 +1,67 @@
+/* components/equipment/equipment.wxss */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #263547;
+}
+.item {
+  text-align: center;
+  width: 96rpx;
+  padding-bottom:50rpx; 
+}
+.font {
+  font-size: 24rpx;
+  text-align: center;
+}
+/**icon*/
+.chuang::after {
+  font-family: 'iconfont';
+  content:'\e635';
+}
+.dianshi::after {
+  font-family: 'iconfont';
+  content:'\e634';
+}
+.dianbingxiang::after {
+  font-family: 'iconfont';
+  content:'\e633';
+}
+.yigui::after {
+  font-family: 'iconfont';
+  content:'\e63e';
+}
+.zhuoyi::after {
+  font-family: 'iconfont';
+  content:'\e641';
+}
+.reshuiqi::after {
+  font-family: 'iconfont';
+  content:'\e639';
+  font-size: 45rpx;
+}
+.kongtiao::after {
+  font-family: 'iconfont';
+  content:'\e63a';
+}
+.weibolu::after {
+  font-family: 'iconfont';
+  content:'\e640';
+}
+.xiyiji::after {
+  font-family: 'iconfont';
+  content:'\e63f';
+}
+.meiqilu::after {
+  font-family: 'iconfont';
+  content:'\e63b';
+}
+.shafa::after{
+  font-family: 'iconfont';
+  content:'\e63d';
+}
+.chouyouyanji::after{
+  font-family: 'iconfont';
+  content:'\e636';
+}
+

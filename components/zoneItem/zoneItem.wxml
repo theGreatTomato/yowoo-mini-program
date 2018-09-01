@@ -1,0 +1,23 @@
+<!--components/zoneItem/zoneItem.wxml-->
+<view class='flex-container zoneItem' id="{{id}}"  catchtap='click' >
+    <image src="{{imgUrl}}" mode='aspectFill'></image>
+    <view class='font-contaienr'>
+        <view class='title'>{{name}}</view>
+        <view style='height:24rpx;' class='addr-container' >
+            <text class='addr-icon'></text><text>{{trafficDesc}}</text>
+        </view>
+        <view class='home-num'>
+            符合条件房源：<text style='color:#263547'>{{productCount}}</text>套
+        </view>
+    </view>
+    <view class='icon-container' wx:if="{{houseResourceType=== 1||houseResourceType === 2}}" >
+      <view class=" {{houseResourceType===1 ? 'wuye-icon':'gongyu-icon'}}">
+      </view>
+      <view class='font'>
+        {{houseResourceType===1 ? '物业':'公寓'}}
+      </view>
+      <view class='font' style = "top:30rpx;">
+        直租
+      </view>
+    </view>
+</view>

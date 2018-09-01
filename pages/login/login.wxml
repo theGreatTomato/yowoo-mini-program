@@ -1,0 +1,28 @@
+<!--pages/login/login.wxml-->
+<view class='top'>
+  <view class='title'>登录</view>
+  <text class='desc'>租房找物业  省钱又省心</text>
+</view>
+<form bindsubmit="formSubmit" report-submit="true">
+  <view >
+    <view class='container'>
+      <text class='explain'>您的手机号码?</text>    
+      <input type="number" id="txtCellphone" name="cellphone" placeholder="输入手机号" focus='true'
+             bindinput="cellphoneInput" bindblur="cellphoneBlur"/>
+      <button id="btnCode" class='button' formType="submit" bindtap="getCode">{{btnCodeText}}</button>
+    </view>
+
+    <view class='container'>
+      <text class='explain'>验证码</text>          
+      <input type="number" id="txtCode" name="code" placeholder="输入验证码"
+             bindinput="codeInput" bindblur="codeBlur"/>
+    </view>
+
+    <view class='container' style='border:0'>
+      <button id="btnLogin" class='button' formType="submit" catchtap="login">提交</button>
+      <view class='text'>登录完成好房子将离你更近一步</view>   
+    </view>
+
+    <view class='error container' wx:if='{{errMsg.length > 0}}'>{{errMsg}}</view>
+  </view>
+</form>       

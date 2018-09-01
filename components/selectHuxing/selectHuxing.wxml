@@ -1,0 +1,20 @@
+<!--components/selectHuxing/selectHuxing.wxml-->
+<view class='huxing-container' catchtap='cancel'>
+  <view class='huxing' catchtap='none'>
+    <view class='row'>
+      <view class="popover-md {{selectIndex===0?'selected':''}}" id='0' catchtap='click'>不限</view>
+      <view class="popover-md {{selectIndex===1?'selected':''}}" id='1' catchtap='click'>单间</view>
+      <view class="popover-md {{selectIndex===2?'selected':''}}" id='2' catchtap='click'>一室一厅</view>
+    </view>
+      <view class='row'>
+      <view class="popover-md {{selectIndex===3?'selected':''}}" id='3' catchtap='click'>二室一厅</view>
+      <view class="popover-md {{selectIndex===4?'selected':''}}" id='4' catchtap='click'>三室一厅</view>
+      <view class="popover-md {{selectIndex===5?'selected':''}}" id='5' catchtap='click'>三室两厅</view>
+    </view>
+    <view class='row'>
+      <view class="popover-md {{selectIndex===6?'selected':''}}" id='6' catchtap='click'>四室两厅</view>
+      <view class="popover-md {{selectIndex===7?'selected':''}}" id='7' catchtap='click'>五室两厅</view>
+      <view class="popover-md"></view>
+    </view>
+  </view>
+</view>

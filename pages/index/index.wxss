@@ -1,0 +1,96 @@
+page{
+  height: 100%;
+}
+/**用户信息**/
+.userinfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 40rpx;
+    height: 250rpx;
+    border-bottom: 1rpx solid #DCE0E0;
+}
+
+.userinfo-avatar {
+    width: 140rpx;
+    height: 140rpx;
+    border-radius: 50%;
+}
+
+.userinfo-nickname {
+  line-height: 50rpx;
+  font-size: 46rpx;
+}
+
+/*按钮样式*/
+.button-container {
+    padding: 0 30rpx;
+    width: 750rpx;
+    box-sizing: border-box;
+}
+.login-out-btn{
+  box-sizing: content-box;
+  border-radius: 60rpx;
+  background: #fff;
+  color: #FE5F5F;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  margin: 120rpx auto;
+  width: 220rpx;
+  text-align: center;
+}
+/*每一个选项*/
+.item {
+  height: 140rpx;
+  margin: 0 40rpx;
+  border-bottom: 1rpx solid #DCE0E0;  
+  font-size: 30rpx;
+}
+.item text{
+  margin-left: 30rpx;
+}
+.item .desc {
+  color: #D2CDCD;
+  margin-right: 21rpx;
+}
+.icon-next-page{
+  height: 23rpx;
+  width: 23rpx;
+}
+/*icon*/
+.icon-next-page::after{
+  font-family: 'iconfont';
+  color: #D2CDCD;
+  content: '\e659';
+  height: 23rpx;
+  width: 23rpx;
+}
+.home:after {
+  font-family: 'iconfont';
+  content: '\e70a';
+  color:#666666;
+  height: 30rpx;
+  width: 30rpx;
+}
+.shouyi:after {
+  font-family: 'iconfont';
+  content: '\e651';
+  color:#666666;
+  height: 30rpx;
+  width: 30rpx;
+}
+.customer-service:after {
+  font-family: 'iconfont';
+  content: '\e632';
+  color:#666666;
+  height: 30rpx;
+  width: 30rpx;
+}
+.about:after {
+  font-family: 'iconfont';
+  content: '\e631';
+  color:#666666;
+  height: 30rpx;
+  width: 30rpx;
+}

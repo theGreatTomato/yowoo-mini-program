@@ -1,0 +1,63 @@
+<!--index.wxml-->
+<form bindsubmit="formSubmit" report-submit="true">
+  <view class="container" wx:if="{{!hasUserInfo || !isUser}}" style='height:100%;'>
+      <!--此示例将获取用户信息授权和系统用户注册检查写到了同一个按钮上，且为了逻辑表述清晰，用户登录检查分开写在了bindtap的checkLogin函数中-->
+      <view class='button-container'>
+        <button class='button' id="btnLogin" 
+                formType="submit"  bindtap="checkLogin"
+                open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+          {{loginText}}
+        </button>
+      </view>
+  </view>
+</form >
+
+
+
+
+  <view wx:if="{{hasUserInfo && isUser}}" >
+    <view class="userinfo">
+      <view class="userinfo-nickname">{{userInfo.nickName}}</view>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    </view>
+    <view class='container item' id='myHouseResource' catchtap='link'>
+      <view>
+        <i class='home'></i>
+        <text>我的房源</text>
+      </view>
+      <view>
+        <text class='desc'>有房转租可点击发布房源</text>
+        <i class='icon-next-page'></i>
+      </view>
+    </view>
+    <view class='container item' id='shouyi' catchtap='link'>
+      <view>
+        <i class='shouyi'></i>
+        <text>我的收益</text>
+      </view>
+      <view>
+        <i class='icon-next-page'></i>
+      </view>
+    </view>
+    <view class='container item' id='customerService' catchtap='service'>
+      <view>
+        <i class='customer-service'></i>
+        <text>联系客服</text>
+      </view>
+      <view>
+        <i class='icon-next-page'></i>
+      </view>
+    </view>
+    <view class='container item' id='aboutMe' bindtap='link'>
+      <view>
+        <i class='about'></i>
+        <text>关于有屋</text>
+      </view>
+      <view>
+        <i class='icon-next-page'></i>
+      </view>
+    </view>
+    <form bindsubmit="loginOut" report-submit="true" >
+      <button class='login-out-btn submit' formType="submit" >退出登录</button>
+    </form>
+  </view>

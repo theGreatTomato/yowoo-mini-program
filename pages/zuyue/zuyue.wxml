@@ -1,0 +1,72 @@
+<view class='top'>
+  我的租约
+</view>
+<view style='background:#F6F6F6;height:12rpx;'></view>
+<view class='title'>
+  <view class='name'>{{productName}}</view>
+  <view class='date'>{{startTime}} 签约</view>
+</view>
+
+<view class='flex-container'>
+  <view class='key'>
+    <text>租</text>
+    <text>金：</text>
+  </view>
+  <view class='word'>{{price}}元/月</view>
+</view>
+<view class='flex-container'>
+  <view class='key'>
+    <text>押</text>
+    <text>付</text>
+    <text>方</text>
+    <text>式：</text>
+  </view>
+  <view class='word'>{{pay}}</view>
+</view>
+<view class='flex-container'>
+  <view class='key'>
+    <text>起</text>
+    <text>租</text>
+    <text>时</text>
+    <text>间：</text>
+  </view>
+  <view class='word'>{{startTime}}</view>
+</view>
+<view class='flex-container'>
+  <view class='key'>
+    <text>租</text>
+    <text>约</text>
+    <text>期</text>
+    <text>限：</text>
+  </view>
+  <view class='word'>{{qixian}}</view>
+</view>
+<view class='flex-container'>
+  <view class='key'>
+    <text>服</text>
+    <text>务</text>
+    <text>费：</text>
+  </view>
+  <view class='word'  style='width:410rpx'>{{ownerAmount}}元</view>
+  <view class='width:100rpx;border-radius:4rpx;'>
+      <view class="{{renterPayStatus === '已支付'?'yizhifu':'zhifu'}}"> {{renterPayStatus}}</view>
+  </view>
+</view>
+
+
+<block wx:if="{{renterPayStatus === '未支付'}}">
+<view class='col-container' style='padding:60rpx 0;'>
+  <view style='font-size:30rpx;color:#9F9DA3;'>本次租约需支付服务费</view>
+  <view class='price'>¥ {{price}}</view>
+</view>
+
+<view style='width:268rpx;height:80rpx;margin:0 auto;border-radius:4rpx' >
+  <form bindsubmit="formSubmit" report-submit="true">
+    <button class='btn' style='font-size:28rpx;' form-type='submit' catchtap='paynow'>立即付款</button>
+  </form>
+</view>
+</block>
+
+
+<Toast text='支付成功' mode='success' bind:cancel="successCancel" wx:if="{{toastHidden === 'success'}}"   ></Toast>
+<Toast text='支付失败' mode='fail' bind:cancel="cancel" wx:if="{{toastHidden === 'fail'}}"></Toast>

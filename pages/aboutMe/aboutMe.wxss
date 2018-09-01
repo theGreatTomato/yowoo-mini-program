@@ -1,0 +1,86 @@
+/*公共*/
+.col{
+  width: 100%;
+  line-height: 50rpx;
+  font-size: 40rpx;
+  padding-left: 20rpx;
+  padding-bottom: 10rpx;
+}
+.desc {
+  color: #9F9DA3;
+  font-size: 28rpx;
+  line-height: 36rpx;
+}
+.firstWord {
+  color: #FE5F5F;
+}
+.container {
+  margin: 0 30rpx;
+  flex-wrap: wrap;
+}
+.icon-container {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30rpx;
+}
+.font{
+  font-size: 30rpx;
+  line-height: 40rpx;
+  border-bottom: 4rpx;
+  color: #263547;
+}
+/*顶部*/
+.img-container {
+  padding: 100rpx 0;
+  text-align: center;
+  width: 100%;
+}
+.img-container image {
+  width: 750rpx;
+  height: 353rpx;
+}
+/*文字容器*/
+.text-container {
+  font-size: 28rpx;
+  line-height: 50rpx;
+  padding: 50rpx 30rpx;
+  color: #263547;
+}
+/**icon*/
+.yowoo:after {
+  font-family: 'iconfont';
+  content: '\e63c';
+  color:#fe5f5f;
+  font-size: 51rpx;
+}
+.wuyezhizu:after {
+  font-family: 'iconfont';
+  content: '\e642';
+  color:#FE5F5F;
+  font-size: 28rpx;
+}
+.dianhua:after {
+  font-family: 'iconfont';
+  content: '\e655';
+  color:#FE5F5F;
+}
+.addr:after {
+  font-family: 'iconfont';
+  content: '\e667';
+}
+.wb:after {
+  font-family: 'iconfont';
+  content: '\e666';
+}
+.wx:after {
+  font-family: 'iconfont';
+  content: '\e66a';
+}
+.youxiang:after {
+  font-family: 'iconfont';
+  content: '\e669';
+}

@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "小区房源",
+  "usingComponents": {
+    "HouseItem": "../../components/houseItem/houseItem",
+    "ZoneItem": "../../components/zoneItem/zoneItem",
+    "SelectMore": "../../components/selectMore/selectMore",
+    "SelectPrice": "../../components/selectPrice/selectPrice",
+    "SelectHuxing": "../../components/selectHuxing/selectHuxing",
+    "SelectZone": "../../components/selectZone/selectZone"
+  }
+}

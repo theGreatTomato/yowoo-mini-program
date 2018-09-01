@@ -1,0 +1,29 @@
+<!--components/toast/toast.wxml-->
+<view class='flex-container' style='height:100%;background:rgba(0,0,0,0.5)'>
+    <view wx:if="{{mode==='ok'}}" class='ok'> 
+        <view class='ok-icon' style='color:#37BC9B;'></view>
+        <view style='color:#37BC9B;'>{{text}}</view>
+    </view>
+    <view wx:if="{{mode==='loading'}}" class='loading'> 
+        <image src='../../icon/Loading.gif'></image>
+        <view style='color: #FE5F5F;'>{{text}}</view>
+    </view>
+    <view wx:if="{{mode==='success'}}" class='success'>
+        <view class='success-icon'></view>
+        <view style='color:#37BC9B;font-size:50rpx;'> {{text}}</view>
+        <form bindsubmit="formSubmit" report-submit="true">
+            <view class='form-container'>
+                <button class='btn' form-type='submit' catchtap='cancel'>返回</button>
+            </view>
+        </form>
+    </view>
+    <view wx:if="{{mode==='fail'}}" class='success'>
+        <view class='fail-icon'></view>
+        <view style='color: #FE5F5F;'> {{text}}</view>
+        <form bindsubmit="formSubmit" report-submit="true">
+            <view class='form-container'>
+                <button class='btn' form-type='submit' catchtap='cancel'>返回</button>
+            </view>
+        </form>
+    </view>
+</view>

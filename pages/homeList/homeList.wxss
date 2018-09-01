@@ -1,0 +1,58 @@
+/* pages/homeList/homePage.wxss */
+.sort {
+  position: fixed;
+  bottom: 100rpx;
+  right:30rpx;
+  width: 86rpx;
+  height: 86rpx;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  color: #fff;
+}
+.sort view {
+  position: relative;
+  top: -5rpx;
+  color: #fff;
+  padding: 0rpx 33rpx 0 33rpx;
+}
+.sort .font {
+  font-size: 22rpx;
+  line-height: 22rpx;
+  text-align: center;
+  display: block;
+  color: #fff;
+}
+.sort-icon::after {
+  font-family: 'iconfont';
+  content: '\e65f';
+  font-size: 22rpx;
+}
+.select-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 750rpx;
+}
+.content {
+  background: #fff;
+  width: 750rpx;
+  position: fixed;
+  bottom: 0;
+  flex-direction:column;
+} 
+.content view {
+  width: 750rpx;
+  height:100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 36rpx;
+}
+.select {
+  color:#FE5F5F;
+}
+page {
+  height:100%
+}

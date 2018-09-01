@@ -1,0 +1,64 @@
+ <view  
+            bindtouchmove = 'touchmove'
+            bindtouchend = 'touchend'
+            bindtouchstart = 'touchstart'>
+  <view class="userinfo">
+  <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+        <view class="userinfo-nickname">{{userInfo.nickName}}</view>
+    </view>
+
+    <view  style='padding:30rpx;postitive:relative'>
+      <image class='col-container background-img' src='../../img/2.png'>
+      </image >
+      <view>
+          <view class='yue'>可提现余额（元）</view>
+          <view class='price'>{{data.cashAmount}}</view>
+          <form class='tixian' bindsubmit="formSubmit" report-submit="true">
+            <button form-type='submit' catchtap='tixian'>提现</button>
+          </form>
+        </view>
+    </view>
+
+    <view style='background:#F6F6F6;padding:30rpx;'>
+      <scroll-view 
+            scroll-y="true"  
+            style="height:{{scrollviewHeight}};box-sizing:border-box;background:#fff;"
+            bindscrolltolower='tolower'
+            bindscroll='scroll'>
+           <view  
+            bindtouchmove = 'touchmove'
+            bindtouchend = 'touchend'
+            bindtouchstart = 'touchstart'>
+              <view style='color:#9F9DA3;font-size:28rpx;line-height:96rpx;padding:0 30rpx;border-bottom: 1rpx solid #DCE0E0'>收益明细</view>
+              <block wx:if="{{data.allProfitRecords !== undefined && data.allProfitRecords !== undefined}}">
+                <view wx:for="{{data.allProfitRecords}}" class='container con' wx:key='unique'>
+                  <view class='col-contaienr'>
+                    <view class='type'>{{item.type}}</view>
+                    <view class='desc'>{{item.desc}}</view>
+                  </view>
+                  <view class='col-contaienr'>
+                    <view class='amount'>￥ {{item.amount}}</view>
+                    <view class='time'>{{item.time}}</view>
+                  </view>
+                </view>
+              </block>
+              <block wx:else>
+                <view class='col-container'>
+                  <view style='padding-top:96rpx;' class='shouyi-icon'></view>
+                  <view style='padding:20rpx 0rpx;font-size:36rpx;color:#E7E1E1'>暂无收益</view>
+                  <view style='font-size:28rpx;color:#E7E1E1'>租房有红包，邀请有奖励，赶快行动吧</view>
+                </view>
+              </block>
+            </view>              
+      </scroll-view >
+    </view>
+
+   </view>
+
+     <movable-area style="margin-top:-150rpx" >
+    <movable-view out-of-bounds="true" inertia="true" y="{{y}}" damping="{{damping}}" direction="vertical">
+    <view style='height:80rpx;width:80rpx;border-radius:40rpx;background:#ddd;' class='container '>
+        <image style='margin:0 auto;height:29rpx;width:50rpx;' src='../../icon/Loading.gif'></image>
+      </view>
+    </movable-view>
+  </movable-area>

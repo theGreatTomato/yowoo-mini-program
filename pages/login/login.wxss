@@ -1,0 +1,51 @@
+/* pages/login/login.wxss */
+
+.top {
+  padding: 50rpx 40rpx;
+}
+.top .title {
+  font-size: 50rpx;
+  line-height: 88rpx;
+}
+.top .desc {
+  color: #9F9DA3;
+  font-size: 30rpx;
+}
+.container {
+  flex-wrap: wrap;
+  width: 670rpx;
+  padding-bottom: 20rpx;
+  margin: 20rpx 40rpx 40rpx 40rpx;  
+  border-bottom: 1rpx solid #DCE0E0;
+}
+#txtCellphone {
+  width: 350rpx;
+  font-size: 30rpx
+}
+#txtCode {
+  font-size: 30rpx;
+}
+#btnCode{
+  width:auto;
+  font-size: 26rpx;
+  line-height: 50rpx; 
+  margin-right: 0;
+}
+.explain {
+  font-size: 28rpx;
+  line-height: 68rpx;
+  width: 100%;
+  color: #263547;
+}
+.text {
+  font-size: 24rpx;
+  color: #9F9DA3;
+  text-align: center;
+  width: 100%;
+  margin-top: 26rpx;
+}
+.error {
+  color:#FE5F5F;
+  font-size: 26rpx;
+  border:0;
+}

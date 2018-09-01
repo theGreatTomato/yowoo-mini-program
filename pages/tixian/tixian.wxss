@@ -1,0 +1,58 @@
+.flex-container {
+  height: 130rpx;
+  padding: 0 30rpx;
+  width: 690rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1rpx solid #E7E1E1;
+}
+.flex-container view {
+  color: #263547;
+  width: 150rpx;
+  font-size: 30rpx; 
+  text-align: left;
+}
+.flex-container input {
+  color: #263547;
+  width: 440rpx;
+  text-align: right;
+  font-size: 28rpx;
+}
+
+.earing {
+  text-align: center;
+  font-size: 28rpx;
+  color: #9F9DA3;
+  padding: 100rpx 0 60rpx 0; 
+}
+
+.RMB {
+  color: #fe5f5f;
+  font-size: 50rpx;
+}
+
+.price-input {
+  padding: 0;
+  margin: 0;
+  width: 300rpx;
+  font-size:100rpx; 
+  line-height: 100rpx;
+  height: 110rpx;
+  max-height: 110rpx;
+  color: #fe5f5f;
+  text-align: right;
+}
+
+.log {
+  color: #fe5f5f;
+  font-size: 28rpx;
+  background: transparent;
+  text-decoration: underline;
+}
+button:active {
+  opacity: 0.8;
+}
+.log::after {
+  border: 0
+}

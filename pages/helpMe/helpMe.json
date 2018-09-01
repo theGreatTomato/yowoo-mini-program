@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "提交需求" ,
+    "usingComponents": {
+      "pickerView": "../../components/pickerView/pickerView",
+      "priceSection": "../../components/priceSection/priceSection",
+      "Toast": "../../components/toast/toast",
+      "TimePicker": "../../components/timePicker/timePicker"
+    }
+}

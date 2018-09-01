@@ -1,0 +1,34 @@
+/* components/selectHuxing/selectHuxing.wxss */
+.huxing-container {
+  height:100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1000;
+}
+.huxing {
+  padding: 30rpx;
+  position: relative;
+  z-index: 9999;
+  background: #fff;
+}
+.huxing .row{
+  width: 100%;
+  padding: 20rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+}
+
+.popover-md {
+  background: #F8F8F8;
+  color: #9F9DA3;
+  font-size: 26rpx;
+  line-height: 52rpx;
+  width: 174rpx;
+  text-align: center;
+}
+.selected {
+  background: #FE5F5F;
+  color: #fff;
+}

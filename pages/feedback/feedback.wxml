@@ -1,0 +1,42 @@
+
+<view class='top'>
+  这次看房您的感觉如何？
+</view>
+
+<view style='border-bottom:1rpx solid #DCE0E0;margin:60rpx 30rpx 0 30rpx' catchtap='data1'>
+  <view style='font-size:28rpx;'>这套房源您满意吗？</view>
+  <view class="{{hasData1?'true':'false'}}">{{hasData1?hasData1:'请选择满意程度'}}</view>
+</view>
+
+<view wx:if="{{hasData1 ==='不满意'}}"  style='border-bottom:1rpx solid #DCE0E0;margin:60rpx 30rpx 0 30rpx'>
+<view  style='font-size:28rpx;'>不满意的原因？</view>
+  <view class="{{hasData1?'true':'false'}}">
+    <input style='font-size:30rpx;' style='padding:25rpx 0;' bindinput='input' placeholder='请您填写不满意的原因' value = "{{text}}"></input>
+  </view>
+</view>
+
+
+<view style='border-bottom:1rpx solid #DCE0E0;margin:60rpx 30rpx 0 30rpx' catchtap='data2'>
+  <view style='font-size:28rpx;'>物业的服务态度怎么样？</view>
+  <view class="{{hasData2?'true':'false'}}">{{hasData2?hasData2:'请选择满意程度'}}</view>
+</view>
+
+
+<view style='height:300rpx'></view>
+<form bindsubmit="formSubmit" report-submit="true">
+  <view style='padding:30rpx;height:94rpx;'>
+    <button form-type='submit' catchtap='onSubmit' class='button' style='line-height:94rpx;font-size:30rpx'>提交</button>
+  </view>
+</form>
+
+<view hidden="{{!onSelect}}">
+  <pickerView  
+    rangeArray="{{range}}" 
+    bind:click = 'click' 
+    bind:cancel='cancel' 
+    bind:change = 'change'>
+  </pickerView>
+</view>
+
+<Toast text='提交成功' mode='success' bind:cancel="successToastClick" wx:if="{{toastHidden === 'success'}}"   ></Toast>
+<Toast text='提交失败' mode='fail' bind:cancel="failToastClick" wx:if="{{toastHidden === 'fail'}}"></Toast>
